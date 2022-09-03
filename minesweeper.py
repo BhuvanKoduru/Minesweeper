@@ -11,12 +11,12 @@ class Minesweeper():
 
     def __init__(self, height=8, width=8, mines=8):
 
-        # Set initial width, height, and number of mines
+        # Setting initial width, height, and number of mines
         self.height = height
         self.width = width
         self.mines = set()
 
-        # Initialize an empty field with no mines
+        # Initializing an empty field with no mines
         self.board = []
         for i in range(self.height):
             row = []
@@ -61,7 +61,7 @@ class Minesweeper():
         not including the cell itself.
         """
 
-        # Keep count of nearby mines
+        # Keeping count of nearby mines
         count = 0
 
         # Loop over all cells within one row and column
@@ -112,7 +112,6 @@ class Sentence():
         else:
             return set()
 
-        raise NotImplementedError
 
     def known_safes(self):
         """
@@ -122,7 +121,6 @@ class Sentence():
             return self.cells
         else:
             return set()
-        raise NotImplementedError
 
     def mark_mine(self, cell):
         """
@@ -134,8 +132,6 @@ class Sentence():
             self.count -= 1
         return
 
-        raise NotImplementedError
-
     def mark_safe(self, cell):
         """
         Updates internal knowledge representation given the fact that
@@ -144,7 +140,7 @@ class Sentence():
         if cell in self.cells:
             self.cells.remove(cell)
         return
-        raise NotImplementedError
+        
 
 
 class MinesweeperAI():
@@ -248,11 +244,8 @@ class MinesweeperAI():
                             self.mark_safe(new_sen.cells.pop())
                         self.knowledge.remove(new_sen)
                         
-                   
-    
-
+       
         return
-        raise NotImplementedError
        
     def make_safe_move(self):
         """
@@ -267,7 +260,7 @@ class MinesweeperAI():
             if move not in self.moves_made and move not in self.mines:
                 return move 
         return None
-        raise NotImplementedError
+        
 
     def make_random_move(self):
         """
@@ -289,5 +282,3 @@ class MinesweeperAI():
         else:
             num=random.randint(0,len(s1)-1)
             return s1[num]
-        
-        raise NotImplementedError
